@@ -1,7 +1,9 @@
 package setup;
 
-public class Team {
+import java.util.Scanner;
 
+public class Team {
+//	private static Scanner ask = new Scanner(System.in);
 	private String name;
 	private int points;
 	private int seed;
@@ -12,10 +14,28 @@ public class Team {
 		this.seed = seed;
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public Team(){
+		askAway();
 	}
+	
+	//Prompting
+	public void giveName() {
+		Scanner ask = new Scanner(System.in);
+		System.out.println("What will the team name be?");
+		String namePrompt = ask.nextLine();
+		this.name = namePrompt;
+	}
+	public void giveSeed() {
+		Scanner ask = new Scanner(System.in);
+		System.out.println("What will the team be seeded?");
+		int seedPrompt = ask.nextInt();
+		this.seed = seedPrompt;
+	}
+	public void askAway(){
+		giveName();
+		giveSeed();
+	}
+	
 	
 	// Name getter & setter
 	public String getName() {

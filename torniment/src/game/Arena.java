@@ -13,10 +13,13 @@ public class Arena {
 	
 	public static Team playGame(Team team1, Team team2){
 		Random rand = new Random();
+		
 		int randomScore1 = rand.nextInt(60);
 		int randomScore2 = rand.nextInt(60);
+		
 		team1.setPoints(randomScore1);
 		team2.setPoints(randomScore2);
+		
 		if(team1.getPoints() > team2.getPoints()){
 			System.out.println("---------------------------------------------");
 			System.out.println(team1.getName()+ " won the game. ");
@@ -31,14 +34,13 @@ public class Arena {
 			System.out.println(team1.getName()+ " score was " + team1.getPoints());
 			return team2;
 		}
-		
 	}
 	
 	public static Team torniment(){
-		Team round1 = playGame(Michigan, Indiana);
+		Team round1 = playGame(Michigan_State, Indiana);
 		System.out.println(round1.getName() + " is the winner");
 		
-		Team round2 = playGame(Michigan_State, Winsconsin);
+		Team round2 = playGame(Michigan, Winsconsin);
 		System.out.println(round2.getName() + " is the winner");
 		
 		Team finalRound = playGame(round1, round2);
@@ -48,20 +50,7 @@ public class Arena {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		Michigan.getInfo();
-//		Michigan_State.getInfo();
-//		Winsconsin.getInfo();
-//		Indiana.getInfo();
-//		
-//		Team round1 = playGame(Michigan, Indiana);
-//		System.out.println(round1.getName() + " is the winner");
-//		Michigan.getInfo();
-//		Indiana.getInfo();
-//		
-//		Team round2 = playGame(Michigan_State, Winsconsin);
-//		System.out.println(round2.getName() + " is the winner");
-//		Michigan_State.getInfo();
-//		Winsconsin.getInfo();
+
 		
 		torniment();
 		
